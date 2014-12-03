@@ -2,7 +2,7 @@
 
 This is a salt state module to install [mosh](https://mosh.mit.edu/) on a server.
 
-# Download:
+## Download:
 
 To download salt-mosh to your salt-master:
 
@@ -11,7 +11,7 @@ cd /srv/salt
 git clone https://github.com/zanloy/salt-mosh.git mosh
 ```
 
-# Usage:
+## Usage:
 
 To install mosh, add the following to your top.sls:
 
