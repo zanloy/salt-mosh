@@ -2,14 +2,15 @@
 
 {% if salt['pillar.get']('mosh:firewall', '') == 'iptables' %}
 .iptables:
-  - table: filter
-  - chain: INPUT
-  - jump: ACCEPT
-  - match: state
-  - connstate: NEW
-  - dport: 60000:61000
-  - proto: udp
-  - save: True
+  iptables.append:
+    - table: filter
+    - chain: INPUT
+    - jump: ACCEPT
+    - match: state
+    - connstate: NEW
+    - dport: 60000:61000
+    - proto: udp
+    - save: True
 {% elif salt['pillar.get']('mosh:firewall', '') == 'ufw' %}
 .ufw:
   file.managed:
